@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--<h1 th:text="${msg}"></h1>-->
+
+<!--表单控件-->
+<input type="text" th:value="${msg}">
+
+<!--字符串拼接-->
+<span th:text="'张三'+ ${msg}"></span>
+<span th:text="|王五${msg}|"></span>
+</body>
+</html>

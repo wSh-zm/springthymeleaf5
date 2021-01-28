@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/pages-cart.css" th:href="@{/css/pages-cart.css}"/>
+</head>
+<body>
+<span th:if="${flag == 'yes'}">yes</span>
+<span th:unless="${flag == 'yes'}">no</span>
+
+
+<div th:switch="${menu}">
+    <span th:case="admin">admin</span>
+    <span th:case="${manager}">manager</span>
+</div>
+
+<!--把片段的内容插入到当前位置-->
+<div th:insert="~{footer :: copy}"></div>
+
+<!--不要片段的标签-->
+<div th:include="~{footer :: copy}"></div>
+<!--要片段的标签-->
+<div th:replace="~{footer :: copy}"></div>
+</body>
+</html>
